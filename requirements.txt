@@ -2,6 +2,7 @@
 
 SQLAlchemy==2.0.52
 pyodbc==4.0.39
+psycopg2-binary==2.9.13
 pandas==2.0.3
 matplotlib==3.8.2
 numpy==2.3.1
