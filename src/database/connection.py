@@ -38,13 +38,13 @@ class DatabaseConnection:
 
     @property
     def engine(self):
-        """Cria o engine na primeira utilizacao (lazy) e reaproveita depois."""
+        # Cria o engine na primeira utilizacao (lazy) e reaproveita depois.
         if self._engine is None:
             self._engine = self._strategy.create_engine()
         return self._engine
 
     def test_connection(self) -> None:
-        """Testa a conexao executando uma query simples de versao do banco."""
+        # Testa a conexao executando uma query simples de versao do banco.
         query_versao = self._QUERIES_VERSAO.get(type(self._strategy), "SELECT 1")
         try:
             with self.engine.connect() as connection:
@@ -77,14 +77,9 @@ def get_connection(db_type: str) -> DatabaseConnection:
     return DatabaseConnection(strategy_class(), nome=db_type_normalizado)
 
 
-# ---------------------------------------------------------------------------
-# Instancias prontas para uso direto em notebooks/scripts. Mantem AMBAS as
-# conexoes disponiveis ao mesmo tempo, que e o que a analise comparativa
-# entre os dois bancos precisa.
-# ---------------------------------------------------------------------------
+# Instancias prontas para uso direto em notebooks/scripts
 sqlserver_connection = get_connection("sqlserver")
 postgres_connection = get_connection("postgresql")
-
 
 if __name__ == "__main__":
     # Testando as duas conexoes
