@@ -44,26 +44,6 @@ A partir desse recorte, serão realizadas **análises quantitativas e qualitativ
 
 ---
 
-## Como Executar o Projeto
-
-```bash
-# Clonar o repositório
-git clone <URL_DO_REPOSITORIO>
-
-# Acessar o projeto
-cd <NOME_DO_PROJETO>
-
-# Instalar as dependências
-pip install -r requirements.txt
-
-# Executar o projeto
-python <ARQUIVO_PRINCIPAL>.py
-```
-
-> As configurações de acesso aos bancos de dados deverão ser definidas conforme o ambiente de execução.
-
----
-
 ## Tecnologias Utilizadas
 
 
